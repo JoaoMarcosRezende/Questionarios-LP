@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GeneratedType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 
 @Entity
@@ -19,6 +20,9 @@ public class Evento implements Serializable {
 	private String local;
 	private String data;
 	private String horario;
+	
+	@OneToMany
+	private List<Convidado> convidados;
 	
 	public long getCodigo() {
 		return codigo;
